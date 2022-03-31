@@ -19,7 +19,7 @@
         apps.build-and-run = flake-utils.lib.mkApp { drv = packages.build-and-run; };
         defaultPackage = packages.build-and-run;
         defaultApp = apps.build-and-run;
-        devShell = pkgs.mkShell { buildInputs = [ packages.build-and-run ]; };
+        devShell = pkgs.mkShell { buildInputs = [ pkgs.maven packages.build-and-run ]; };
       }
     );
 }
